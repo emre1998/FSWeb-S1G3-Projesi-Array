@@ -1,6 +1,6 @@
 /* BU DERSDEKİ TÜM DEĞERLERİN DÖNMESİNİ (RETURN) UNUTMAYIN, AKSİ TAKDİRDE TEST KONTROLÜ ÇALIŞMAZ */
 
-/* İşte veriniz bu */
+/* İşte veriniz bu 
 const orijinalTatlar = [
   "Muz",
   "Vişne",
@@ -28,7 +28,7 @@ const orijinalTatlar = [
   "Çilek",
   "Vanilya",
 ];
-
+/*
 /* Görev 1: Diziyi kopyalama!
 Orijinal tatların bulunduğu toplam 25 aromanın olduğu bir dizimiz var (yukarıya bakın). Bu görevde, bu dizi'ye veri yazma ve bu diziden veri okuma işlemleri yapacağız.
 Tüm bu değişiklikleri yaparken, gerçek, orijinal 25 lezzetin listesini kaybetmek istemiyoruz. Bu yüzden orijinal diziyi kopyalamamız gerekmektedir!
@@ -40,25 +40,29 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
-}
+function kopyala(orijinalTatlar =["Muz","Vişne","Ceviz","Kestane","Kiraz","Çikolata","Fındık Çikolata","Fıstık Çikolata","Badem Çikolata","Franbuaz","Yaban Mersini","Tarçın","Badem","Kahve", "Fındık","Anten Fıstık","Limon","Misket Limon","Akçaağaç Şurubu","Şeftali","Nane","Ananas","Ahududu","Çilek","Vanilya",]) {
+  return orijinalTatlar.slice();
+};
+
+const orijinalTatlar = ["Muz","Vişne","Ceviz","Kestane","Kiraz","Çikolata","Fındık Çikolata","Fıstık Çikolata","Badem Çikolata","Franbuaz","Yaban Mersini","Tarçın","Badem","Kahve", "Fındık","Anten Fıstık","Limon","Misket Limon","Akçaağaç Şurubu","Şeftali","Nane","Ananas","Ahududu","Çilek","Vanilya",];
+const kopyaTatlar = kopyala(orijinalTatlar);
+console.log(kopyaTatlar);
+
 
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
    1. parametre olarak bir dizi
    2. Verilen dizinin 25 çeşit olup olmadığını kontrol edin
-   3. İşleviniz, dizinin uzunluğu 25 ise DOĞRU(true) ve dizinin uzunluğu 25 DEĞİLSE YANLIŞ(false) bir boolean döndürmelidir.
+   3. İşleviniz, dizinin uzunluğu 25 ise DOĞRU(true) ve dizinin uzunluğu 25 DEĞİLSE YANLIŞ(false) bir boolean döndürmelidir.*/
 
-
-Örneğin: dizi25Cesit(orijinalTatlar) kodunuz düzgün çalışıyorsa true değerini döndürür.
-*/
-
-
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+  function dizi25Cesitmi(tatlar) {
+  return tatlar.length === 25;
 }
+
+ const tatlar = ["Muz","Vişne","Ceviz","Kestane","Kiraz","Çikolata","Fındık Çikolata","Fıstık Çikolata","Badem Çikolata","Franbuaz","Yaban Mersini","Tarçın","Badem","Kahve", "Fındık","Anten Fıstık","Limon","Misket Limon","Akçaağaç Şurubu","Şeftali","Nane","Ananas","Ahududu","Çilek","Vanilya"];
+console.log(dizi25Cesitmi(tatlar)); // true 
+//orijinal tatlar arrayini tekrar tanımlayamadığım için farklı isim verdim
 
 
 /* Görev 3:
@@ -72,11 +76,16 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 
   Örneğin: cesitEkle(orijinalTatlar, "Kakule") işlevi doğru çalıştığında ["Kakule", "Muz",..."Vanilya"] şeklinde dönmelidir
 */
+let Cesnı = ["Muz","Vişne","Ceviz","Kestane","Kiraz","Çikolata","Fındık Çikolata","Fıstık Çikolata","Badem Çikolata","Franbuaz","Yaban Mersini","Tarçın","Badem","Kahve","Fındık","Anten Fıstık","Limon","Misket Limon","Akçaağaç Şurubu","Şeftali","Nane","Ananas","Ahududu","Çilek","Vanilya"];
 
-
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(Cesnı, yeniTat) {
+  Cesnı.unshift(yeniTat);
+  return Cesnı;
 }
+let yenitat = "Kakule";
+let orijinalTat = cesitEkle(Cesnı, yenitat);
+console.log(Cesnı);
+
 
 
 /* Cörev 4:
@@ -92,9 +101,15 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+
+function sonCesitiKaldir(dizi) {
+  dizi.pop(); 
+  return dizi; 
 }
+
+let orijinalTat1 = ["Kakule","Muz","Vişne","Ceviz","Kestane","Kiraz","Çikolata","Fındık Çikolata","Fıstık Çikolata","Badem Çikolata","Franbuaz","Yaban Mersini","Tarçın","Badem","Kahve","Fındık","Anten Fıstık","Limon","Misket Limon","Akçaağaç Şurubu","Şeftali","Nane","Ananas","Ahududu","Çilek","Vanilya"];
+let yeniTatlar = sonCesitiKaldir(orijinalTat1);
+console.log(yeniTatlar); 
 
 
 /* Görev 5:
@@ -108,9 +123,15 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(tat, indeks) {
+  return tat[indeks]
 }
+const tat = ['çikolata', 'vanilya', 'çilek'];
+const indeks = 2;
+const cesni = indekstekiCesitiGetir(tat,2);
+
+
+
 
 
 /* Görev 6:
@@ -128,9 +149,24 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar, lezzet) {
+  const indeks = tatlar.indexOf(lezzet); // lezzetin indeksini bul
+  if (indeks !== -1) {
+    tatlar.splice(indeks, 1); // lezzeti kaldır
+  }
+  return tatlar;
 }
+const orijinal = ['çikolata', 'vanilya', 'çilek', 'tarçın', 'fındık'];
+const yeniTat2 = ismeGoreCesitCikar(orijinal, 'tarçın');
+console.log(yeniTat2); // ['çikolata', 'vanilya', 'çilek', 'fındık']
+
+
+
+
+
+
+
+
 
 
 /* Görev 7:
@@ -154,9 +190,19 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar, filtre) {
+  let filtrelenmisTatlar = [];
+  for (let i = 0; i < tatlar.length; i++) {
+    if (tatlar[i].includes(filtre)) {
+      filtrelenmisTatlar.push(tatlar[i]);
+    }
+  }
+  return filtrelenmisTatlar;
 }
+let TAT = ["Çikolata", "Vanilya", "Fındık Çikolata", "Kahve", "Fıstık Çikolata", "Badem Çikolata"];
+let filtrelenmisTatlar = ismeGoreFiltrele(TAT, "Çikolata");
+console.log(filtrelenmisTatlar); 
+
 
 
 
