@@ -218,9 +218,18 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/){
-  /*kod buraya*/
+function ortalamaKelimeSayisi(orijinalTatlar){
+    let toplamKelimeSayisi = 0;
+    let toplamElemanSayisi = 0;
+    for (let i = 0; i < orijinalTatlar.length; i++) {
+        let eleman = orijinalTatlar[i];
+        let kelimeler = eleman.split(" ");
+        toplamKelimeSayisi += kelimeler.length;
+        toplamElemanSayisi += 1;
+    }
+    return toplamKelimeSayisi / toplamElemanSayisi;
 }
+
 
 
 /* ALIŞTIRMA 2:
@@ -235,10 +244,31 @@ Aşağıdakileri yapmak için rastgeleTatlar işlevini ve yeni dizileri kullanı
   Örneğin: rastgeleTatlar(orijinalTatlar, yeniTatlar, mevsimlikTatlar, bolgeselTatlar) çalıştırıldığında ["Kestane", "Ballı Badem,"..."Hindistan Cevizi", "Kuru üzüm"].
 */
 
+  function rastgeleTatlar(dizi1, dizi2, dizi3) {
+      let yeniDizi = [];
+      while (yeniDizi.length < 25) {
+          let randomDiziIndex = Math.floor(Math.random() * 3);
+          let randomAromaIndex;
+          let randomDizi;
+          if (randomDiziIndex === 0) {
+              randomDizi = dizi1;
+              randomAromaIndex = Math.floor(Math.random() * dizi1.length);
+          } else if (randomDiziIndex === 1) {
+              randomDizi = dizi2;
+              randomAromaIndex = Math.floor(Math.random() * dizi2.length);
+          } else {
+              randomDizi = dizi3;
+              randomAromaIndex = Math.floor(Math.random() * dizi3.length);
+          }
+          let randomAroma = randomDizi[randomAromaIndex];
+          if (!yeniDizi.includes(randomAroma)) {
+              yeniDizi.push(randomAroma);
+          }
+      }
+      return yeniDizi;
+  }
+  
 
-function rastgeleTatlar(/*kod buraya*/){
-  /*kod buraya*/
-}
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 // const yeniTatlar = [
